@@ -1,0 +1,41 @@
+
+body {
+    /* background-color: bisque; */
+    margin: 20px;
+    background-color: #e2f8cf;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+}
+
+.card-item {
+    flex: 0 0 25rem;
+    box-sizing: border-box;
+    margin: 1rem 0.25em;
+    border-radius: 10px;
+    border: 1px solid;
+}
+
+.card-image {
+    border-radius: 10px;
+}
+
+section{
+    padding: 60px 0;
+  }
+
+#pricing.bg-cor {
+  background-color: #e1c8f8;
+}
+
+#pricing.img-cat {
+  margin: 0 auto;
+  width: 100px;
+}
+
+#reviews.bg-cor{
+    background-color: #fdf1bd;
+}

@@ -1,0 +1,272 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+<style>
+  .whatsapp-link {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25d366;
+    color: #fff;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 1px 1px 2px #888;
+    z-index: 1000;
+  }
+
+  .fa-whatsapp {
+    margin-top: 16px;
+  }
+</style>
+</head>
+
+<body>
+  <a class="whatsapp-link" href="https://wa.me/5511968669243" target="_blank">
+    <i class="fa fa-whatsapp"></i>
+  </a>
+
+  <section id="intro">
+    <div class="container-lg">
+      <div class="row g-4 justify-content-center align-items-center">
+        <div class="col-md-5 text-center text-md-start">
+          <h1>
+            <div class="display-2">BrechóSim</div>
+            <div class="display-5 text-muted">Moda Sustentável</div>
+          </h1>
+          <p class="lead my-4 text-muted">Diga sim à moda de reuso, o planeta e seu bolso agradecem.</p>
+
+                  <!-- novo parágrafo -->
+         <p class="lead my-4" style="color: #333;"> Seja bem vinda! Estamos muito felizes em recebe-la!</p>
+
+         <p class="lead my-4" style="color: #333;"> Ao clicar nesse botão você pode escolher um item e nós reservaremos para você provar:</p>
+
+          <a href="{% url 'list-item' %}" class="btn btn-secondary btn-lg">Reserve uma peça</a>
+          <!-- open sidebar / offcanvas -->
+          <a href="#sidebar" class="d-block mt-3" data-bs-toggle="offcanvas" role="button" aria-controls="sidebar">
+          </a>
+
+          <p class="lead my-4" style="color: #333;"> Já nesse botão é para você que prefere agendar sem escolher um produto:</p>
+
+          <a href="{% url 'appointment-create' %}" rell="next" href="#pricing" class="btn btn-secondary btn-lg">Agendamentos</a>
+          <!-- open sidebar / offcanvas -->
+          <a href="#sidebar" class="d-block mt-3" data-bs-toggle="offcanvas" role="button" aria-controls="sidebar">
+          </a>
+
+        </div>
+        <div class="col-md-5 text-center d-none d-md-block">
+          <!-- tooltip -->
+          <span class="tt" data-bs-placement="bottom" title="Net Ninja Pro book cover">
+
+            <video src="{% static 'imagens/BrechóSim.mp4' %}" width="700" autoplay loop muted
+              poster="Imagens/BrechóSim22.png"></video>
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <section id="pricing" class="bg-cor mt-4">
+      <div class="container-lg">
+        <div class="text-center">
+          <h2>Nosso espaço</h2>
+          <p class="lead text-muted">Venha nos visitar.</p>
+        </div>
+
+        <div>
+          <img src="{% static 'imagens/imagem 1.jpg' %}" height="450" alt="">
+
+          <img src="{% static 'imagens/imagem 4.jpg' %}" height="450" alt="">
+
+          <img src="{% static 'imagens/imagem 3.jpg' %}" height="450" alt="">
+
+          <img src="{% static 'imagens/imagem 5.jpg' %}" height="450" alt="">
+        </div>
+
+
+
+        <!-- pricing plans -->
+        <section id="pricing" class="bg-cor mt-4">
+          <div class="container-lg">
+            <div class="text-center">
+              <h2>Peças e Acessorios</h2>
+              <p class="lead text-muted">Escolha a peça que combine com seu estilo.</p>
+            </div>
+            <div>
+              <img src="{% static 'imagens/blusabataamarela.jpeg' %}" width="200" alt="">
+
+              <img src="{% static 'imagens/shoesanabelablack1.jpeg' %}" width="200" alt="">
+
+              <img src="{% static 'imagens/shoesverdevazado.jpeg' %}" width="200" alt="">
+
+              <img src="{% static 'imagens/vestidoazultomara.jpeg' %}" width="200" alt="">
+
+              <img src="{% static 'imagens/vestazulfloresrosas.jpeg' %}" width="200">
+
+              <img src="{% static 'imagens/vestidoblackzebra.jpeg' %}" width="200" alt="">
+
+              <img src="{% static 'imagens/vestidobrancorendado.jpeg' %}" width="200" alt="">
+
+              <img src="{% static 'imagens/vestidofestacinza.jpeg' %}" width="200" alt="">
+
+              <img src="{% static 'imagens/vestidofestacosta.jpeg' %}" width="200">
+
+              <img src="{% static 'imagens/vestidograylaco.jpeg' %}" width="200" alt="">
+            </div>
+        </section>
+
+        <section id="topics">
+          <div class="container-md">
+            <div class="text-center">
+              <h2>BrechóSim</h2>
+              <p class="lead text-muted">Um estilo. Um corpo. Muitas possibilidades.</p>
+            </div>
+            <div class="row my-5 g-5 justify-content-around align-items-center">
+              <div class="col-6 col-lg-4">
+                <img src="{% static 'imagens/logocabide.png' %}" width="100" class="img-col24" alt="colecao2024"
+                  style="width: 200px">
+              </div>
+              <div class="col-lg-6">
+
+                <!-- accordion -->
+                <div class="accordion" id="chapters">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading-1">
+                      <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#chapter-1" aria-expanded="true" aria-controls="chapter-1">
+                        Sobre a Loja
+                      </button>
+                    </h2>
+                    <div id="chapter-1" class="accordion-collapse collapse show" aria-labelledby="heading-1"
+                      data-bs-parent="#chapters">
+                      <div class="accordion-body">
+                        <p>Muitas famílias brasileiras buscam meios para complementar sua renda familiar. Pensando
+                          sobre isso, buscamos empreender no nosso tempo livre e descobrimos que o brechó seria uma
+                          excelente opção, envolveria o consumo consciente de roupas, na reutilização de peças,
+                          principalmente voltadas para o tamanho plus size. Um movimento que tem ganhado espaço no
+                          mercado da moda, favorecendo a inclusão social, com a roupa ideal para o seu tipo de
+                          corpo.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+                <div class="accordion" id="chapters">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading-3">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#chapter-3" aria-expanded="false" aria-controls="chapter-1">
+
+                        Parcerias
+                      </button>
+                    </h2>
+                    <div id="chapter-3" class="accordion-collapse collapse" aria-labelledby="heading-3"
+                      data-bs-parent="#chapter">
+                      <div class="accordion-body">
+                        <p>O cliente pode ser um consumidor e/ou um parceiro da loja, em sua compra atual, lembrou
+                          de alguma peça em bom estado, que não gostou muito depois da compra, não serve mais. Faça
+                          uma Troca Bonus conosco. Ao trazer sua peça de roupa para avaliação, poderá receber um
+                          desconto de até 50% na sua compra atual.
+                          Venha nos conhecer, tome um café conosco, veja nossas roupas.
+                          Esperamos por voce!</p>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </section>
+
+           <!-- reviews list -->
+           <section id="reviews" class="bg-cor">
+            <div class="container-lg">
+              <div class="text-center">
+                <h2><i class="bi bi-stars"></i>BrechóSim nas Mídias</h2>
+                <p class="lead">Um pedacinho de nós em cada compra...</p>
+              </div>
+        
+              <div class="row justify-content-center my-4">
+                <div class="col-lg-8">
+                  <div class="list-group">
+                    <div class="list-group-item py-2">
+                        <div class="pb-2">
+                            <i class="bi bi-star-fill text-altdark"></i>
+                            <i class="bi bi-star-fill text-altdark"></i>
+                            <i class="bi bi-star-fill text-altdark"></i>
+                            <i class="bi bi-star-fill text-altdark"></i>
+                            <i class="bi bi-star-fill text-altdark"></i>
+                          </div>
+                      <h5 class="mb-1">Sucesso BrechóSim!</h5>
+                      <p class="mb-1">Desejo muito sucesso nas vendas.</p>
+                      <small>Por @rods.s</small>
+                    </div>
+                    <div class="list-group-item py-2">
+                        <div class="pb-2">
+                          <i class="bi bi-star-fill text-altdark"></i>
+                          <i class="bi bi-star-fill text-altdark"></i>
+                          <i class="bi bi-star-fill text-altdark"></i>
+                          <i class="bi bi-star-fill text-altdark"></i>
+                          <i class="bi bi-star-fill text-altdark"></i>
+                          </div>
+                      <h5 class="mb-1">Arrasou BrechóSim!!!</h5>
+                      <p class="mb-1">Sucesso de vendas.</p>
+                      <small>Por @quintal_de_ksa</small>
+                    </div>
+                    <div class="list-group-item py-2">
+                        <div class="pb-2">
+                          <i class="bi bi-star-fill text-altdark"></i>
+                          <i class="bi bi-star-fill text-altdark"></i>
+                          <i class="bi bi-star-fill text-altdark"></i>
+                          <i class="bi bi-star-fill text-altdark"></i>
+                          <i class="bi bi-star-fill text-altdark"></i>
+                          </div>
+                      <h5 class="mb-1">Boas Vendas!</h5>
+                      <p class="mb-1">BrechóSim, tudo de bom, boas vendas.</p>
+                      <small>Por @shirley.andraade</small>
+                    </div>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="bg-light">
+            <div class="container">
+              <div class="text-center">
+                <h2>Acompanhe nossas coleções.</h2>
+                <p class="lead">Sempre um estilo...</p>
+              </div>
+              <div class="row justify-content-center">
+                <div class="col-md-8 text-center">
+                  <p class="text-muted my-4">Acompanhe as tendencias!</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+             
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+        
+          <script>
+            const tooltips = document.querySelectorAll('.tt')
+            tooltips.forEach(t => {
+              new bootstrap.Tooltip(t)
+            })
+          </script>
+      </body> 
+
+
+    {% endblock %}

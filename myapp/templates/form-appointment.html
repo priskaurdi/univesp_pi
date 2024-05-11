@@ -1,0 +1,32 @@
+{% extends 'base.html' %} 
+
+{% block title %}Novo Agendamento{% endblock %}
+
+{% load static %}
+
+{% block content %}
+<div class="container"> 
+    <div class="d-flex gap-4 mt-3">
+
+        <span class="tt" data-bs-placement="bottom" title="Net Ninja Pro book cover">
+            <video src="{% static 'imagens/BrechóSim.mp4' %}" width="700" autoplay loop muted
+              poster="Imagens/BrechóSim22.png"></video>
+          </span>
+ 
+        <!-- <img src="{% static 'imagens/logo-brecho.png' %}" class="card-image" width="100%" height="500" alt="client"> -->
+  
+        <form class="col-md-4" action="{% url 'appointment-create' %}" method="post">
+            {% csrf_token %}
+            <h3>Novo Agendamento</h3>
+            {% for field in form %}
+            <div class="mt-3">
+                {{field.label}}
+                {{field}}
+            </div>
+            {% endfor %}
+            <input type="submit" class="btn btn-primary mt-3" value="Salvar">
+        </form>
+        
+    </div> 
+</div>
+{% endblock %}
